@@ -5,7 +5,7 @@ services:
  ####################################################
  ### SETUP API SERVER CONTAINER
  ####################################################
- backend: back # name of the first service
+ backend:  # name of the first service
   build: ./backend # specify the directory of the Dockerfile
   image: backend # specify the image name
   container_name: "backend"
