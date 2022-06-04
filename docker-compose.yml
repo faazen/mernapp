@@ -41,7 +41,7 @@ services:
  ####################################################
  ### SETUP MONGODB DATABASE CONTAINER
  ####################################################  
- mongo: mongodb1# name of the database service
+ mongo: # name of the database service
   image: mongo:latest # specify the image name
   container_name: "mongo"
   restart: always
