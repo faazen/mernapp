@@ -5,13 +5,13 @@ services:
  ####################################################
  ### SETUP API SERVER CONTAINER
  ####################################################
- backend: # name of the first service
+ backend: back # name of the first service
   build: ./backend # specify the directory of the Dockerfile
   image: backend # specify the image name
   container_name: "backend"
   environment: 
-   - MONGODB_URI=${MONGODB_URI}
-   - PORT=${PORT}
+   - MONGODB_URI=http://localhost.com
+   - PORT=27017
   ports:
    - 8888:8888 #specify ports mapping outside_port:container_port
   volumes:
@@ -46,15 +46,15 @@ services:
   container_name: "mongo"
   restart: always
   ports:
-   - ${MONGO_PORT}:${MONGO_PORT} #specify ports mapping outside_port:container_port
+   - 27017: 27017 #specify ports mapping outside_port:container_port
   volumes:
    - ./mongo/data:/data/db # bind location on host's drive "./mongo/data" to the Mongo's data location in container "/data/db"
   networks:
    - appnetwork
   environment:
   # provide your admin credentials here
-   MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
-   MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+   MONGO_INITDB_ROOT_USERNAME: root
+   MONGO_INITDB_ROOT_PASSWORD: example
    
 networks:
   appnetwork:
