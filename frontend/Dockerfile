@@ -11,6 +11,7 @@ COPY . /app
 
 # Install dependencies
 RUN npm install 
+RUN npm install lodash.throttle.
 
 RUN npm run build
 
