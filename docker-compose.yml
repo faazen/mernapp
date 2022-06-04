@@ -6,7 +6,7 @@ services:
  ### SETUP API SERVER CONTAINER
  ####################################################
  backend:  # name of the first service
-  build: ./backend # specify the directory of the Dockerfile
+  # specify the directory of the Dockerfile
   image: backend # specify the image name
   container_name: "backend"
   environment: 
@@ -27,7 +27,7 @@ services:
  ### SETUP FRONT END CONTAINER
  ####################################################
  frontend: # name of the first service
-  build: ./frontend # specify the directory of the Dockerfile
+ # specify the directory of the Dockerfile
   image: frontend # specify the image name
   container_name: "frontend"
   ports:
