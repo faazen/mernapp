@@ -25,6 +25,3 @@ EXPOSE 5000
 # Launch application
 CMD ["npm","start"]
 
-
-RUN npm install pm2 -g
-RUN pm2 start server.js
